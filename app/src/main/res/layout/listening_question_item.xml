@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:gravity="center_horizontal"
+    >
+
+    <ImageView
+        android:id="@+id/animation_ImageView"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        android:src="@drawable/audio_turned_off"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/startAudio_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phát"
+        android:textSize="30sp"
+        android:layout_marginTop="20dp"
+        style="@style/startAudioButtonStyle"
+        />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/option1_Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="A"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        style="@style/lessonItemStyle"
+        />
+
+    <Button
+        android:id="@+id/option2_Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="B"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        style="@style/lessonItemStyle"
+        />
+
+    <Button
+        android:id="@+id/option3_Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="C"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        style="@style/lessonItemStyle"
+        />
+
+    <Button
+        android:id="@+id/option4_Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="D"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="25dp"
+        style="@style/lessonItemStyle"
+        />
+
+</LinearLayout>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/language_levels_dialog_bg"
+    android:backgroundTint="@null"
+    android:paddingStart="15dp"
+    android:paddingEnd="15dp"
+    android:paddingTop="15dp"
+    android:paddingBottom="30dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/chooseLanguageLevelTitle_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chọn trình độ của bạn"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:layout_marginTop="25dp"/>
+
+
+
+        <TextView
+            android:id="@+id/levelN5_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cornered_button"
+            android:text="N5"
+            android:textSize="30sp"
+            android:textAlignment="center"
+            android:layout_marginTop="20dp"
+            />
+
+        <TextView
+            android:id="@+id/levelN4_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cornered_button"
+            android:text="N4"
+            android:textSize="30sp"
+            android:textAlignment="center"
+            android:layout_marginTop="20dp"
+            />
+
+        <TextView
+            android:id="@+id/levelN3_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cornered_button"
+            android:text="N3"
+            android:textSize="30sp"
+            android:textAlignment="center"
+            android:layout_marginTop="20dp"
+            />
+
+        <TextView
+            android:id="@+id/levelN2_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cornered_button"
+            android:text="N2"
+            android:textSize="30sp"
+            android:textAlignment="center"
+            android:layout_marginTop="20dp"
+            />
+
+        <TextView
+            android:id="@+id/levelN1_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cornered_button"
+            android:text="N1"
+            android:textSize="30sp"
+            android:textAlignment="center"
+            android:layout_marginTop="20dp"
+            />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,22 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background (Màu xám nhạt) -->
+    <item android:id="@android:id/background">
+        <shape android:shape="rectangle">
+            <corners android:radius="10dp"/>
+            <solid android:color="#E0E0E0"/>
+        </shape>
+    </item>
+
+    <!-- Tiến trình đã đạt được (Gradient màu xanh) -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape android:shape="rectangle">
+                <corners android:radius="10dp"/>
+                <gradient
+                    android:startColor="#4CAF50"
+                    android:endColor="#81C784"
+                    android:angle="0"/>
+            </shape>
+        </clip>
+    </item>
+</layer-list>

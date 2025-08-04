@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="mainTitle">#86a600</color>
+    <color name="mainTitle2">#99AB52</color>
+    <color name="mainTitle3">#93A058</color>
+    <color name="mainButton_start">#12D8FA</color>
+    <color name="mainButton_end">#009fb0</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="red">#DE1053</color>
+    <color name="pinkred">#DC7287</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="green">#15E61E</color>
+    <color name="lightgray">#DCD9D9</color>
+    <color name="darkgray">#808080</color>
+    <color name="checkbox_checked_color">#6200EE</color> <!-- Màu nền khi được chọn -->
+    <color name="checkbox_border_white">#FFFFFF</color> <!-- Màu viền trắng -->
+    <color name="primary">#2AB9A9</color>
+    <color name="darkblue">#0333EF</color>
+
+
+</resources>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Tiêu đề -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🔧 Quản lý tổng hợp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#1B5E20"
+            android:paddingBottom="24dp"
+            android:padding="16dp" />
+
+        <!-- Phần Bài học -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:elevation="2dp"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:text="📚 Bài học từ vưng"
+                android:textSize="18sp" android:textStyle="bold"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/addVocabularyLessons_Button"
+                    android:text="Thêm"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/vocabularyLessons_RecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
+        </LinearLayout>
+
+        <!-- Phần Chế độ học -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:elevation="2dp"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:text="📔 Từ vựng bài học"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"/>
+            <EditText
+                android:id="@+id/lessonTitleSearch_EditText"
+                android:hint="Nhập tiêu đề bài học từ vựng"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/lessonTitleSearch_Button"
+                    android:text="Tìm"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/addWord_Container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/addWord_Button"
+                    android:text="Thêm"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/lessonContent_RecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
+        </LinearLayout>
+
+        <!-- Phần Bài test -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:elevation="2dp"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView android:text="📝 Bài Test" android:textSize="18sp" android:textStyle="bold"  android:layout_height="wrap_content" android:layout_width="match_parent"/>
+            <EditText android:id="@+id/edtTestTitle" android:hint="Tiêu đề bài test"
+                android:layout_width="match_parent" android:layout_height="wrap_content" />
+            <EditText android:id="@+id/edtQuestion" android:hint="Câu hỏi"
+                android:layout_width="match_parent" android:layout_height="wrap_content" />
+            <EditText android:id="@+id/edtAnswer" android:hint="Đáp án"
+                android:layout_width="match_parent" android:layout_height="wrap_content" />
+            <LinearLayout android:layout_width="match_parent" android:orientation="horizontal" android:layout_height="wrap_content">
+                <Button android:id="@+id/btnAddTest" android:text="Thêm" android:layout_weight="1"
+                    android:layout_width="0dp" android:layout_height="wrap_content" />
+                <Button android:id="@+id/btnUpdateTest" android:text="Sửa" android:layout_weight="1"
+                    android:layout_width="0dp" android:layout_height="wrap_content" />
+                <Button android:id="@+id/btnDeleteTest" android:text="Xóa" android:layout_weight="1"
+                    android:layout_width="0dp" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerTests"
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
+        </LinearLayout>
+
+        <!-- Phần Người dùng -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:elevation="2dp"
+            android:padding="16dp"
+            android:layout_marginBottom="32dp">
+
+            <TextView android:text="👤 Người dùng" android:textSize="18sp" android:textStyle="bold"  android:layout_height="wrap_content" android:layout_width="wrap_content"/>
+            <EditText android:id="@+id/edtUserEmail" android:hint="Email người dùng"
+                android:layout_width="match_parent" android:layout_height="wrap_content" />
+            <EditText android:id="@+id/edtUserRole" android:hint="Loại tài khoản (user/admin)"
+                android:layout_width="match_parent" android:layout_height="wrap_content" />
+            <LinearLayout android:layout_width="match_parent" android:orientation="horizontal" android:layout_height="wrap_content">
+                <Button android:id="@+id/btnAddUser" android:text="Thêm" android:layout_weight="1"
+                    android:layout_width="0dp" android:layout_height="wrap_content" />
+                <Button android:id="@+id/btnUpdateUser" android:text="Sửa" android:layout_weight="1"
+                    android:layout_width="0dp" android:layout_height="wrap_content" />
+                <Button android:id="@+id/btnDeleteUser" android:text="Xóa" android:layout_weight="1"
+                    android:layout_width="0dp" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerUsers"
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

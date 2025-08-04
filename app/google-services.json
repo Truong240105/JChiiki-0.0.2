@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "838765098497",
+    "firebase_url": "https://jarea-project-default-rtdb.firebaseio.com",
+    "project_id": "jarea-project",
+    "storage_bucket": "jarea-project.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:838765098497:android:d086f154414bdbf5b63200",
+        "android_client_info": {
+          "package_name": "com.example.jchiiki"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "838765098497-6th610ncnfpstu9ip8inhmipjfppk98f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.jchiiki",
+            "certificate_hash": "85c07295694491ede91e8d1d95a94e76f74cd4d3"
+          }
+        },
+        {
+          "client_id": "838765098497-ql3io2qljdc62nome5c3o2qdcoppedkv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEZrsLCNo3nMeeo0Tm-okHrhqLKEHGbus"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "838765098497-ql3io2qljdc62nome5c3o2qdcoppedkv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

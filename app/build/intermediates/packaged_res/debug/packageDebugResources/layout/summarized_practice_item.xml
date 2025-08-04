@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:background="@drawable/summarized_practice_bg"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:layout_marginTop="30dp"
+    >
+
+    <!-- Biểu tượng JLPT (N5, N4,...) -->
+    <TextView
+        android:id="@+id/summarizedPracticeLevel_TextView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/level_circle_background"
+        android:gravity="center"
+        android:text="N5"
+        android:textAlignment="center"
+        android:textColor="#F8F2F2"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <!-- Tiêu đề và mũi tên -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+       >
+
+        <TextView
+            android:id="@+id/summarizedPracticeTitle_TextView"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Tổng hợp 1"
+            android:textColor="#FFFCFC"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/point_TextView"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="(0/100)"
+            android:textColor="#FFFCFC"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <!-- Mũi tên bo viền -->
+        <ImageView
+            android:id="@+id/item_arrow"
+            android:layout_width="55dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="60dp"
+            android:background="@drawable/summarized_practice_next_button_bg"
+            android:padding="4dp"
+            android:src="@drawable/summarized_practice_next_icon" />
+
+    </LinearLayout>
+
+</LinearLayout>

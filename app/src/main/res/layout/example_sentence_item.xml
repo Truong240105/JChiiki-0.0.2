@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:background="#E8F5E9"
+    android:layout_marginBottom="8dp">
+
+    <TextView
+        android:id="@+id/exampleSentence_TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Câu mẫu"
+        android:textStyle="bold"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/exampleReading_TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phiên âm"
+        android:textSize="14sp"
+        android:textColor="#388E3C" />
+
+    <TextView
+        android:id="@+id/exampleMeaning_TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nghĩa tiếng Việt"
+        android:textSize="14sp"
+        android:textColor="#616161" />
+</LinearLayout> 

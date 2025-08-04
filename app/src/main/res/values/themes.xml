@@ -1,0 +1,80 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.JChiiki" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#86a600</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="LoginTheme." parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#86a600</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>>
+
+    <!-- Customize your button here. -->
+    <style name="CustomButtonStyle" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@null</item>
+        <item name="android:background">@drawable/not_cornered_button</item>
+    </style>
+
+    <style name="googleLoginStyle" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@null</item>
+        <item name="android:background">@drawable/google_login_button</item>
+    </style>
+
+    <style name="chosenAnswer" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@null</item>
+        <item name="android:background">@drawable/chosen_answer_bg</item>
+    </style>
+
+    <style name="lessonItemStyle" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@null</item>
+        <item name="android:background">@drawable/custom_card_white</item>
+    </style>
+
+    <style name="corneredBackToHomeButtonStyle" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@null</item>
+        <item name="android:background">@drawable/cornered_back_to_home_btn_bg</item>
+    </style>
+
+    <style name="submitTestButtonStyle" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@null</item>
+        <item name="android:background">@drawable/submit_test_button_bg</item>
+    </style>
+
+    <style name="startAudioButtonStyle" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/red</item>
+        <item name="android:background">@drawable/submit_test_button_bg</item>
+    </style>
+
+    <style name="sampleReadingButtonStyle" parent="Widget.Material3.Button">
+        <item name="backgroundTint">#DDE490</item>
+        <item name="android:background">@drawable/circle_background</item>
+    </style>
+
+    <style name="speakButtonStyle" parent="Widget.Material3.Button">
+        <item name="backgroundTint">#E7B7B0</item>
+        <item name="android:background">@drawable/circle_background</item>
+    </style>
+
+    <style name="languageLevelDialogStyle" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@null</item>
+    </style>
+
+    <style name="Theme.JChiiki" parent="Base.Theme.JChiiki" />
+</resources>

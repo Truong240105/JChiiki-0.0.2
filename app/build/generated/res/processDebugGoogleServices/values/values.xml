@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">838765098497-ql3io2qljdc62nome5c3o2qdcoppedkv.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://jarea-project-default-rtdb.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">838765098497</string>
+    <string name="google_api_key" translatable="false">AIzaSyDEZrsLCNo3nMeeo0Tm-okHrhqLKEHGbus</string>
+    <string name="google_app_id" translatable="false">1:838765098497:android:d086f154414bdbf5b63200</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDEZrsLCNo3nMeeo0Tm-okHrhqLKEHGbus</string>
+    <string name="google_storage_bucket" translatable="false">jarea-project.firebasestorage.app</string>
+    <string name="project_id" translatable="false">jarea-project</string>
+</resources>
