@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/grammarLessonTitle_EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tiêu đề bài học (VD: Bài 1)"
+        android:background="@drawable/edit_profile_field_bg"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp" />
+
+    <EditText
+        android:id="@+id/grammarLessonName_EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tên bài học"
+        android:background="@drawable/edit_profile_field_bg"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp" />
+
+    <EditText
+        android:id="@+id/grammarLessonImage_EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="URL hình ảnh bài học"
+        android:background="@drawable/edit_profile_field_bg"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp" />
+
+</LinearLayout> 

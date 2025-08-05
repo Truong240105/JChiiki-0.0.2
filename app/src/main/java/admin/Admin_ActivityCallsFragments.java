@@ -11,6 +11,7 @@ import com.google.android.material.navigation.NavigationBarView;
 
 import admin.fragments.Admin_HomeFragment;
 import admin.fragments.Admin_SettingsFragment;
+import admin.fragments.Admin_GrammarFragment;
 
 public class Admin_ActivityCallsFragments extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
@@ -33,6 +34,9 @@ public class Admin_ActivityCallsFragments extends AppCompatActivity {
 
                 if (id == R.id.home) {
                     selectedFragment = new Admin_HomeFragment();
+                }
+                else if (id == R.id.grammar){
+                    selectedFragment = new Admin_GrammarFragment();
                 }
                 else if (id == R.id.settings){
                     selectedFragment = new Admin_SettingsFragment();

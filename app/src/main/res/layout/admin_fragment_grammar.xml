@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Phần quản lý bài học ngữ pháp -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/custom_card_white"
+        android:padding="16dp"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quản lý bài học ngữ pháp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/addGrammarLessons_Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thêm bài học ngữ pháp"
+            android:background="@drawable/cornered_button"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="16dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/grammarLessons_RecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/custom_card"
+            android:padding="8dp" />
+
+    </LinearLayout>
+
+    <!-- Phần quản lý nội dung bài học ngữ pháp -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/custom_card_white"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quản lý nội dung bài học ngữ pháp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"
+            android:textColor="@color/black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <EditText
+                android:id="@+id/grammarLessonTitleSearch_EditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Nhập tiêu đề bài học ngữ pháp"
+                android:background="@drawable/edit_profile_field_bg"
+                android:padding="12dp"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/grammarLessonTitleSearch_Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tìm kiếm"
+                android:background="@drawable/cornered_button"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/addGrammarPoint_Container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/addGrammarPoint_Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Thêm điểm ngữ pháp"
+                android:background="@drawable/cornered_button"
+                android:textColor="@android:color/white"
+                android:layout_marginBottom="16dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/grammarContent_RecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@drawable/custom_card"
+                android:padding="8dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout> 

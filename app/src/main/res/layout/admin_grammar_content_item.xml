@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="@drawable/custom_card"
+    android:layout_margin="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:id="@+id/grammarPoint_TextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="は particle"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/edit_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sửa"
+            android:background="@drawable/cornered_button"
+            android:textColor="@android:color/white"
+            android:layout_marginEnd="8dp"
+            android:padding="8dp" />
+
+        <Button
+            android:id="@+id/delete_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Xóa"
+            android:background="@drawable/cornered_button"
+            android:textColor="@android:color/white"
+            android:padding="8dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/explanation_TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Giải thích ngữ pháp"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/example_TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ví dụ sử dụng"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/translation_TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bản dịch ví dụ"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:textStyle="italic" />
+
+</LinearLayout> 

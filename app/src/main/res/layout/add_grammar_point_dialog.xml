@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/grammarPoint_EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Điểm ngữ pháp (VD: は particle)"
+        android:background="@drawable/edit_profile_field_bg"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp" />
+
+    <EditText
+        android:id="@+id/grammarExplanation_EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Giải thích ngữ pháp"
+        android:background="@drawable/edit_profile_field_bg"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp"
+        android:inputType="textMultiLine"
+        android:minLines="3" />
+
+    <EditText
+        android:id="@+id/grammarExample_EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ví dụ sử dụng"
+        android:background="@drawable/edit_profile_field_bg"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp"
+        android:inputType="textMultiLine"
+        android:minLines="2" />
+
+    <EditText
+        android:id="@+id/grammarTranslation_EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Bản dịch ví dụ"
+        android:background="@drawable/edit_profile_field_bg"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp" />
+
+</LinearLayout> 

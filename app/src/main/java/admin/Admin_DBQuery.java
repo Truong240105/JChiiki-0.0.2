@@ -30,6 +30,7 @@ import java.util.Map;
 import admin.callback.MyCompleteListenerWithData2;
 import admin.items.AdminLessonChoices;
 import admin.items.AdminVocabularyWords;
+import admin.items.AdminGrammarPoint;
 
 public class Admin_DBQuery {
     // Access a Cloud Firestore instance from your Activity
@@ -796,5 +797,291 @@ public class Admin_DBQuery {
 
     }
 
+    ///// Hàm addGrammarLesson để thêm bài học ngữ pháp mới
+    public static void addGrammarLesson(String lessonTitle, String lessonName, String lessonImage, MyCompleteListener myCompleteListener){
+        g_firestore = FirebaseFirestore.getInstance();
+        WriteBatch batch = g_firestore.batch();
+
+        // Tìm vị trí bài học trong danh sách
+        Integer position = 0;
+        for (GrammarLessonChoices choice: g_grammarLessonList) {
+            if(choice.getLessonTitle().toLowerCase().contains(lessonTitle.toLowerCase())){
+                break;
+            }
+            ++position;
+        }
+
+        // Tạo document mới cho bài học
+        DocumentReference lessonDoc = g_firestore.collection("Grammars").document(lessonTitle);
+        Map<String, Object> lessonData = new ArrayMap<>();
+        lessonData.put("Lesson" + (g_grammarLessonNumber + 1) + "_ID", lessonTitle);
+        lessonData.put("Lesson" + (g_grammarLessonNumber + 1) + "_Name", lessonName);
+        lessonData.put("Lesson" + (g_grammarLessonNumber + 1) + "_Title", lessonTitle);
+        lessonData.put("Lesson" + (g_grammarLessonNumber + 1) + "_Image", lessonImage);
+
+        batch.set(lessonDoc, lessonData);
+
+        // Cập nhật số lượng bài học
+        DocumentReference totalDoc = g_firestore.collection("Grammars").document("TOTAL_GRAMMARS");
+        Map<String, Object> totalData = new ArrayMap<>();
+        totalData.put("COUNT", g_grammarLessonNumber + 1);
+        totalData.put("Lesson" + (g_grammarLessonNumber + 1) + "_ID", lessonTitle);
+
+        batch.set(totalDoc, totalData, SetOptions.merge());
+
+        batch.commit()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        g_grammarLessonNumber++;
+                        myCompleteListener.onSuccess();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        e.printStackTrace();
+                        myCompleteListener.onFailure();
+                    }
+                });
+    }
+
+    ///// Hàm deleteGrammarLesson để xóa bài học ngữ pháp
+    public static void deleteGrammarLesson(String lessonTitle, String lessonID, MyCompleteListener myCompleteListener) {
+        g_firestore = FirebaseFirestore.getInstance();
+        WriteBatch batch = g_firestore.batch();
+
+        // Xóa document bài học
+        DocumentReference lessonDoc = g_firestore.collection("Grammars").document(lessonTitle);
+        batch.delete(lessonDoc);
+
+        // Cập nhật số lượng bài học
+        DocumentReference totalDoc = g_firestore.collection("Grammars").document("TOTAL_GRAMMARS");
+        Map<String, Object> totalData = new ArrayMap<>();
+        totalData.put("COUNT", g_grammarLessonNumber - 1);
+
+        batch.set(totalDoc, totalData, SetOptions.merge());
+
+        batch.commit()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        g_grammarLessonNumber--;
+                        myCompleteListener.onSuccess();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        e.printStackTrace();
+                        myCompleteListener.onFailure();
+                    }
+                });
+    }
+
+    ///// Hàm updateGrammarLesson để cập nhật bài học ngữ pháp
+    public static void updateGrammarLesson(String lessonTitle, String lessonID, String newLessonName, String newLessonImage, MyCompleteListener myCompleteListener){
+        g_firestore = FirebaseFirestore.getInstance();
+        WriteBatch batch = g_firestore.batch();
+
+        DocumentReference lessonDoc = g_firestore.collection("Grammars").document(lessonTitle);
+        Map<String, Object> lessonData = new ArrayMap<>();
+        lessonData.put("Lesson" + lessonID + "_Name", newLessonName);
+        lessonData.put("Lesson" + lessonID + "_Image", newLessonImage);
+
+        batch.update(lessonDoc, lessonData);
+
+        batch.commit()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        myCompleteListener.onSuccess();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        e.printStackTrace();
+                        myCompleteListener.onFailure();
+                    }
+                });
+    }
+
+    ///// Hàm addGrammarPoint để thêm điểm ngữ pháp mới
+    public static void addGrammarPoint(String lessonTitle, Integer grammarPointCount, String grammarPoint, String explanation, String example, String translation, MyCompleteListener myCompleteListener){
+        g_firestore = FirebaseFirestore.getInstance();
+        WriteBatch batch = g_firestore.batch();
+
+        // Tìm bài học tương ứng
+        Integer position = 0;
+        for (GrammarLessonChoices choice: g_grammarLessonList) {
+            if(choice.getLessonTitle().toLowerCase().contains(lessonTitle.toLowerCase())){
+                break;
+            }
+            ++position;
+        }
+
+        // Thêm điểm ngữ pháp vào subcollection
+        DocumentReference grammarPointDoc = g_firestore.collection("Grammars").document(lessonTitle)
+                .collection("GrammarPoints").document("GrammarPoint_" + (grammarPointCount + 1));
+        Map<String, Object> grammarPointData = new ArrayMap<>();
+        grammarPointData.put("GrammarPoint" + (grammarPointCount + 1) + "_ID", "GrammarPoint_" + (grammarPointCount + 1));
+        grammarPointData.put("GrammarPoint" + (grammarPointCount + 1) + "_Point", grammarPoint);
+        grammarPointData.put("GrammarPoint" + (grammarPointCount + 1) + "_Explanation", explanation);
+        grammarPointData.put("GrammarPoint" + (grammarPointCount + 1) + "_Example", example);
+        grammarPointData.put("GrammarPoint" + (grammarPointCount + 1) + "_Translation", translation);
+
+        batch.set(grammarPointDoc, grammarPointData);
+
+        // Cập nhật số lượng điểm ngữ pháp
+        DocumentReference totalDoc = g_firestore.collection("Grammars").document(lessonTitle)
+                .collection("GrammarPoints").document("TOTAL_GRAMMAR_POINTS");
+        Map<String, Object> totalData = new ArrayMap<>();
+        totalData.put("COUNT", grammarPointCount + 1);
+
+        batch.set(totalDoc, totalData, SetOptions.merge());
+
+        batch.commit()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        myCompleteListener.onSuccess();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        e.printStackTrace();
+                        myCompleteListener.onFailure();
+                    }
+                });
+    }
+
+    ///// Hàm searchGrammarPoints để tìm kiếm điểm ngữ pháp
+    public static void searchGrammarPoints(String search, MyCompleteListenerWithData2 myCompleteListenerWithData2){
+        Boolean isFound = false;
+        ArrayList<AdminGrammarPoint> grammarPointsList = new ArrayList<>();
+
+        search = search.trim();
+        search = search.toLowerCase();
+
+        // Tìm bài học tương ứng với tiêu đề
+        Integer position = 0;
+        for (GrammarLessonChoices choice: g_grammarLessonList) {
+            if(choice.getLessonTitle().toLowerCase().contains(search)){
+                isFound = true;
+                break;
+            }
+            ++position;
+        }
+
+        if(isFound){
+            g_selectedLesson_index = position;
+
+            // Tìm điểm ngữ pháp trong bài học
+            g_firestore.collection("Grammars").document(g_grammarLessonList.get(position).getLessonID())
+                    .collection("GrammarPoints").get()
+                    .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                        @Override
+                        public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                            try{
+                                Map<String, QueryDocumentSnapshot> grammarPointsDocumentMap = new ArrayMap<>();
+
+                                for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
+                                    grammarPointsDocumentMap.put(doc.getId(), doc);
+                                }
+
+                                QueryDocumentSnapshot grammarPointsCountDocument = grammarPointsDocumentMap.get("TOTAL_GRAMMAR_POINTS");
+                                if (grammarPointsCountDocument != null) {
+                                    long grammarPointNumber = Long.parseLong(grammarPointsCountDocument.get("COUNT").toString());
+
+                                    for(int i=1; i<=grammarPointNumber; i++) {
+                                        QueryDocumentSnapshot grammarPointDocument = grammarPointsDocumentMap.get("GrammarPoint_" + i);
+
+                                        if (grammarPointDocument != null) {
+                                            String grammarPointID = grammarPointDocument.getString("GrammarPoint" + i + "_ID");
+                                            String grammarPoint = grammarPointDocument.getString("GrammarPoint" + i + "_Point");
+                                            String explanation = grammarPointDocument.getString("GrammarPoint" + i + "_Explanation");
+                                            String example = grammarPointDocument.getString("GrammarPoint" + i + "_Example");
+                                            String translation = grammarPointDocument.getString("GrammarPoint" + i + "_Translation");
+
+                                            grammarPointsList.add(new AdminGrammarPoint(grammarPointID, grammarPoint, explanation, example, translation, search));
+                                        }
+                                    }
+                                }
+                                myCompleteListenerWithData2.onSuccess(grammarPointsList);
+                            }catch (Exception e){
+                                e.printStackTrace();
+                                myCompleteListenerWithData2.onFailure(e);
+                            }
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            e.printStackTrace();
+                            myCompleteListenerWithData2.onFailure(e);
+                        }
+                    });
+        } else {
+            myCompleteListenerWithData2.onFailure(new Exception("Lesson not found"));
+        }
+    }
+
+    ///// Hàm deleteGrammarPoint để xóa điểm ngữ pháp
+    public static void deleteGrammarPoint(String lessonTitle, String grammarPointID, MyCompleteListener myCompleteListener) {
+        g_firestore = FirebaseFirestore.getInstance();
+        WriteBatch batch = g_firestore.batch();
+
+        DocumentReference grammarPointDoc = g_firestore.collection("Grammars").document(lessonTitle)
+                .collection("GrammarPoints").document(grammarPointID);
+        batch.delete(grammarPointDoc);
+
+        batch.commit()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        myCompleteListener.onSuccess();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        e.printStackTrace();
+                        myCompleteListener.onFailure();
+                    }
+                });
+    }
+
+    ///// Hàm updateGrammarPoint để cập nhật điểm ngữ pháp
+    public static void updateGrammarPoint(String lessonTitle, String grammarPointID, String newGrammarPoint, String newExplanation, String newExample, String newTranslation, MyCompleteListener myCompleteListener){
+        g_firestore = FirebaseFirestore.getInstance();
+        WriteBatch batch = g_firestore.batch();
+
+        DocumentReference grammarPointDoc = g_firestore.collection("Grammars").document(lessonTitle)
+                .collection("GrammarPoints").document(grammarPointID);
+        Map<String, Object> grammarPointData = new ArrayMap<>();
+        grammarPointData.put("GrammarPoint_Point", newGrammarPoint);
+        grammarPointData.put("GrammarPoint_Explanation", newExplanation);
+        grammarPointData.put("GrammarPoint_Example", newExample);
+        grammarPointData.put("GrammarPoint_Translation", newTranslation);
+
+        batch.update(grammarPointDoc, grammarPointData);
+
+        batch.commit()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        myCompleteListener.onSuccess();
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        e.printStackTrace();
+                        myCompleteListener.onFailure();
+                    }
+                });
+    }
 
 }
